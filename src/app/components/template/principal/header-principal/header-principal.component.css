@@ -1,0 +1,30 @@
+.navbar-nav {
+    margin-left: 0;
+}
+
+.dropdown-menu {
+    margin-left: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #D30010;
+    color: white;
+}
+
+.navbar-menu {
+    font-size: 20px;
+}
+
+.bg-menu {
+    background-color: #D30010;
+}

@@ -1,0 +1,10 @@
+.container-geral {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h3 {
+    margin-top: 15px;
+}

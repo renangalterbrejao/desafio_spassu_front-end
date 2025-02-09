@@ -1,0 +1,26 @@
+<app-header-principal></app-header-principal>
+<div style="text-align: center;">
+    <div class="container-geral">
+        <div class="container">
+            <h3>Alteração de Assunto</h3>
+        </div>
+        <mat-card class="home mat-elevation-z3" style="width: 80%;">
+            <form>
+                <div class="conteudo-mat-card">
+                    <input matInput placeholder="Nome" [(ngModel)]="assunto.descricao" name="descricao" maxlength="20"
+                        size="40">
+                </div>
+            </form>
+        </mat-card>
+
+        <div class="area-botoes">
+            <button mat-raised-button (click)="confirmarAlteracao()" color="primary">
+                Alterar Assunto
+            </button>
+
+            <button mat-raised-button (click)="home()">
+                Cancelar
+            </button>
+        </div>
+    </div>
+</div>

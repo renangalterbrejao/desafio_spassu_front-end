@@ -1,0 +1,50 @@
+<app-header-principal></app-header-principal>
+<div style="text-align: center;">
+    <div class="container-geral">
+        <div class="container">
+            <h3>Deseja realmente excluir este Livro?</h3>
+        </div>
+        <mat-card class="home mat-elevation-z3" style="width: 80%;">
+            <form>
+                <div class="conteudo-mat-card">
+                    <div class="conteudo-topico" style="width: 100%;">
+                        <div style="width: 25%;">
+                            <span><b>Código:</b> </span> {{ livro.codl }}
+                        </div>
+                        <div style="width: 25%;">
+                            <span><b>Título:</b> </span> {{ livro.titulo }}
+                        </div>
+                        <div style="width: 25%;">
+                            <span><b>Editora:</b> </span> {{ livro.editora }}
+                        </div>
+                        <div style="width: 25%;">
+                            <span><b>Preço:</b> </span> {{livro.preco | currency : 'BRL'}}
+                        </div>
+                    </div>
+                    <div style="width: 30%;">
+                        <h4>Aurores associados</h4>
+                        <div style="width: 100%;" *ngFor="let autor of livro.autores">
+                            {{ autor.nome }}
+                        </div>
+                    </div>
+                    <div style="width: 30%;">
+                        <h4>Assuntos associados</h4>
+                        <div style="width: 100%;" *ngFor="let assunto of livro.assuntos">
+                            {{ assunto.descricao }}
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </mat-card>
+
+        <div class="area-botoes">
+            <button mat-raised-button (click)="deleteLivro()" style="background-color: #D30010; color: white;">
+                Excluir Livro
+            </button>
+
+            <button mat-raised-button (click)="home()">
+                Cancelar
+            </button>
+        </div>
+    </div>
+</div>

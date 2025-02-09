@@ -1,0 +1,30 @@
+<app-header-principal></app-header-principal>
+<div style="text-align: center;">
+    <div class="container-geral">
+        <div class="container">
+            <h3>Deseja realmente excluir este Assunto?</h3>
+        </div>
+        <mat-card class="home mat-elevation-z3" style="width: 80%;">
+            <form>
+                <div class="conteudo-mat-card">
+                    <div style="width: 50%;">
+                        <span><b>Código:</b> </span> {{ assunto.codAs }}
+                    </div>
+                    <div style="width: 50%;">
+                        <span><b>Descrição:</b> </span> {{ assunto.descricao }}
+                    </div>
+                </div>
+            </form>
+        </mat-card>
+
+        <div class="area-botoes">
+            <button mat-raised-button (click)="deleteAssunto()" style="background-color: #D30010; color: white;">
+                Excluir Assunto
+            </button>
+
+            <button mat-raised-button (click)="home()">
+                Cancelar
+            </button>
+        </div>
+    </div>
+</div>

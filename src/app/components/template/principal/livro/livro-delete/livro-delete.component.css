@@ -1,0 +1,39 @@
+.container-geral {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h3 {
+    margin-top: 15px;
+}
+
+.material-icons {
+    margin: 6px;
+}
+
+.area-botoes {
+    margin-top: 25px;
+    flex-flow: row;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.conteudo-mat-card {
+    display: flex;
+    flex-flow: column;
+    min-height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo-topico {
+    display: flex;
+    flex-flow: row;
+    min-height: 100px;
+    justify-content: center;
+    align-items: center;
+}

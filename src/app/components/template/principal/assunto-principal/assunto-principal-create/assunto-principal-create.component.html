@@ -1,0 +1,26 @@
+<app-header-principal></app-header-principal>
+<div style="text-align: center;">
+    <div class="container-geral">
+        <div class="container">
+            <h3>Inclusão de Assunto</h3>
+        </div>
+        <mat-card class="home mat-elevation-z3" style="width: 80%;">
+            <form>
+                <div class="conteudo-mat-card">
+                    <input matInput placeholder="Descrição" [(ngModel)]="assunto.descricao" name="descricao"
+                        maxlength="20" size="20">
+                </div>
+            </form>
+        </mat-card>
+
+        <div class="area-botoes">
+            <button mat-raised-button (click)="confirmarInclusao()" color="primary">
+                Incluir Assunto
+            </button>
+
+            <button mat-raised-button (click)="home()">
+                Cancelar
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,132 @@
+html {
+    align-items: flex-start;
+}
+
+.tela-entrar {
+    background-color: #fff;
+    color: #000;
+    width: 94%;
+    max-width: 2000px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: column;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.subtitulo img {
+    width: 40px;
+}
+
+.container-entrar-principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-flow: row;
+}
+
+input:not(:placeholder-shown) {
+    color: #000;
+}
+
+input:focus {
+    outline: none !important;
+}
+
+.termos-redes-sociais {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+.termos-redes-sociais img {
+    width: 117px;
+    height: 27px;
+    margin-bottom: 5px;
+}
+
+.container-rodape h1 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyright h1 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.container-entrada {
+    display: none;
+}
+
+.container-entrada img {
+    width: 300px;
+    height: 350px;
+}
+
+.container-entrar-header {
+    width: 90%;
+    margin-top: 25px;
+    font-size: 35px;
+    color: #D30010;
+    font-weight: 700;
+}
+
+.container-entrar-principal {
+    width: 90%;
+    height: 450px;
+}
+
+.container-entrada {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tela-entrar {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.subtitulo {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-style: normal;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.container-rodape {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    width: 100%;
+    height: calc(100% - 595px);
+    min-height: 70px;
+    max-height: 300px;
+    background-color: #D30010;
+}

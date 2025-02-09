@@ -1,0 +1,72 @@
+.container-geral {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h3 {
+    margin-top: 15px;
+}
+
+.material-icons {
+    margin: 6px;
+}
+
+.area-botoes {
+    margin-top: 25px;
+    flex-flow: row;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.conteudo-mat-card {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+}
+
+.conteudo-mat-card div {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+    /* Adicione essa linha */
+}
+
+.conteudo-mat-card div input {
+    margin-left: 10px;
+}
+
+.conteudo-mat-card-tabela {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.ajuste-centralizacao {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    padding: 15px;
+}
+
+.acoes-autores {
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

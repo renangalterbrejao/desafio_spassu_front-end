@@ -1,0 +1,30 @@
+<app-header-principal></app-header-principal>
+<div style="text-align: center;">
+    <div class="container-geral">
+        <div class="container">
+            <h3>Deseja realmente excluir este Autor?</h3>
+        </div>
+        <mat-card class="home mat-elevation-z3" style="width: 80%;">
+            <form>
+                <div class="conteudo-mat-card">
+                    <div style="width: 50%;">
+                        <span><b>Código:</b> </span> {{ autor.codAu }}
+                    </div>
+                    <div style="width: 50%;">
+                        <span><b>Nome:</b> </span> {{ autor.nome }}
+                    </div>
+                </div>
+            </form>
+        </mat-card>
+
+        <div class="area-botoes">
+            <button mat-raised-button (click)="deleteAutor()" style="background-color: #D30010; color: white;">
+                Excluir Autor
+            </button>
+
+            <button mat-raised-button (click)="home()">
+                Cancelar
+            </button>
+        </div>
+    </div>
+</div>
