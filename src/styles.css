@@ -37,3 +37,12 @@ a:visited {
 li {
     list-style-type: none;
 }
+
+input[type="checkbox"]:checked {
+    accent-color: #D30010;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}

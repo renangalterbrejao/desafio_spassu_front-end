@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Livro } from '../livro.model';
 import { LivroService } from '../livro.service';
@@ -10,6 +10,8 @@ import { saveAs } from 'file-saver';
   styleUrls: ['./livro-principal.component.css']
 })
 export class LivroPrincipalComponent {
+
+  private estiloAdicionado = false;
 
   livros: Livro[] = [];
 

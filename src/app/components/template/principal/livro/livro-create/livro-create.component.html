@@ -23,7 +23,7 @@
                             </div>
                         </div>
                         <div>
-                            <div style="width: 30%;"><b>Edicao:</b></div>
+                            <div style="width: 30%;"><b>Edição:</b></div>
                             <div>
                                 <input matInput [(ngModel)]="livro.edicao" name="edicao"
                                     (input)="validarNumeros($event, 10)" size="10" pattern="[0-9]{1,10}" type="number">
@@ -61,7 +61,7 @@
 
                 <ng-container matColumnDef="nome">
                     <mat-header-cell *matHeaderCellDef> <b>Nome</b> </mat-header-cell>
-                    <mat-cell *matCellDef="let row"> {{row.nome}} </mat-cell>
+                    <mat-cell *matCellDef="let row" style="padding-left: 0;"> {{row.nome}} </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="action">
@@ -89,7 +89,7 @@
 
                 <ng-container matColumnDef="descricao">
                     <mat-header-cell *matHeaderCellDef> <b>Descrição</b></mat-header-cell>
-                    <mat-cell *matCellDef="let row"> {{row.descricao}} </mat-cell>
+                    <mat-cell *matCellDef="let row" style="padding-left: 0;"> {{row.descricao}} </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="action">

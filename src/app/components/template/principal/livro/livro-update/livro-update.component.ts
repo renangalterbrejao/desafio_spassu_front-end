@@ -80,7 +80,6 @@ export class LivroUpdateComponent {
           const checkboxId = `checkBoxAutor${autor.codAu}`;
           const checkboxElement = document.getElementById(checkboxId) as HTMLInputElement;
           if (checkboxElement) {
-            console.log(checkboxElement)
             checkboxElement.checked = true;
           }
           this.associarAutor(autor.codAu)

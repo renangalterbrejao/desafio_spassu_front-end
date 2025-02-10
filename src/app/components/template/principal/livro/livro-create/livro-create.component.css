@@ -65,17 +65,8 @@
 }
 
 .acoes-autores {
-    height: 55px;
+    height: 56px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-input[type="checkbox"]:checked {
-    accent-color: #D30010;
-}
-
-input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
 }
