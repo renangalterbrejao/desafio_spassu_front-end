@@ -13,7 +13,9 @@ import { AssuntoService } from '../assunto.service';
 })
 export class AssuntoPrincipalUpdateComponent {
 
-  assunto: Assunto
+  assunto: Assunto = {
+    descricao: '',
+  }
   id: number
 
   constructor(

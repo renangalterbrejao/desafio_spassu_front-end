@@ -5,7 +5,7 @@
             <h3>Assuntos</h3>
         </div>
         <div class="mat-elevation-z3" style="width: 80%;" *ngIf="assuntos.length > 0">
-            <table mat-table [dataSource]="assuntos">
+            <table mat-table [dataSource]="assuntos" *ngIf="assuntos && assuntos.length">
 
                 <!-- Id Column -->
                 <ng-container matColumnDef="codAs">

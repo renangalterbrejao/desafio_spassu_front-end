@@ -17,7 +17,6 @@ export class EntradaComponent implements OnInit {
   }
 
   entrar() {
-    console.log('Entrou!');
     this.router.navigateByUrl("/principal");
   }
 

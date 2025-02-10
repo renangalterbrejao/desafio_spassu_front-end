@@ -57,7 +57,6 @@ export class AssuntoService {
 
   errorHandler(e: any): Observable<any> {
     var msgErro = e.error.detail;
-    console.log('erro:' + msgErro)
     this.showMessage("Houve um erro na resposta do servidor: " + msgErro, true);
     return EMPTY
   }

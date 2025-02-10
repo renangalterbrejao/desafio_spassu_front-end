@@ -10,7 +10,9 @@ import { Assunto } from '../assunto.model';
 })
 export class AssuntoPrincipalDeleteComponent {
 
-  assunto: Assunto
+  assunto: Assunto = {
+    descricao: '',
+  }
   id: number
 
   constructor(

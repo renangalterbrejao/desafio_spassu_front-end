@@ -32,8 +32,16 @@ export class LivroService {
     }
 
     create(inputLivro: Livro): Observable<Livro> {
-        console.log(inputLivro)
         return this.http.post<Livro>(this.baseURL, inputLivro).pipe(
+            map((obj) => obj),
+            catchError(e => this.errorHandler(e))
+        )
+    }
+
+    update(inputLivro: Livro): Observable<Livro> {
+        const url = `${this.baseURL}/${inputLivro.codl}`
+        delete inputLivro.codl
+        return this.http.put<Livro>(url, inputLivro).pipe(
             map((obj) => obj),
             catchError(e => this.errorHandler(e))
         )
@@ -54,7 +62,6 @@ export class LivroService {
 
     errorHandler(e: any): Observable<any> {
         var msgErro = e.error.detail;
-        console.log('erro:' + msgErro)
         this.showMessage("Houve um erro na resposta do servidor: " + msgErro, true);
         return EMPTY
     }

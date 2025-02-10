@@ -20,7 +20,6 @@ export class LivroPrincipalComponent {
   ngOnInit(): void {
     this.livroService.read().subscribe(livros => {
       this.livros = livros
-      console.log(livros)
     })
   }
 

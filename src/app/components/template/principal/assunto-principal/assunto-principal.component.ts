@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AssuntoPrincipalComponent implements OnInit {
 
-  assuntos: Assunto[]
+  assuntos: Assunto[] = []
 
   displayedColumns = ['codAs', 'descricao', 'action']
 
@@ -20,7 +20,6 @@ export class AssuntoPrincipalComponent implements OnInit {
   ngOnInit(): void {
     this.AssuntoService.read().subscribe(assuntos => {
       this.assuntos = assuntos
-      console.log(assuntos)
     })
   }
 

@@ -35,6 +35,7 @@ import { LivroDeleteComponent } from './components/template/principal/livro/livr
 import { LivroCreateComponent } from './components/template/principal/livro/livro-create/livro-create.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { LivroUpdateComponent } from './components/template/principal/livro/livro-update/livro-update.component';
 
 registerLocaleData(ptBr);
 
@@ -55,6 +56,7 @@ registerLocaleData(ptBr);
     AssuntoPrincipalUpdateComponent,
     LivroDeleteComponent,
     LivroCreateComponent,
+    LivroUpdateComponent,
   ],
   imports: [
     BrowserModule,

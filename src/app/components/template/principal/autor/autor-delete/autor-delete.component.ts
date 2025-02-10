@@ -10,7 +10,10 @@ import { AutorService } from '../autor.service';
 })
 export class AutorDeleteComponent {
 
-  autor: Autor
+  autor: Autor = {
+    nome: '',
+  }
+
   id: number
 
   constructor(

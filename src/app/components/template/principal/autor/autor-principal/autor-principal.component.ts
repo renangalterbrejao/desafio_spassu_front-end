@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AutorPrincipalComponent {
 
-  autores: Autor[]
+  autores: Autor[] = []
 
   displayedColumns = ['codAu', 'nome', 'action']
 
@@ -19,7 +19,6 @@ export class AutorPrincipalComponent {
   ngOnInit(): void {
     this.autorService.read().subscribe(autores => {
       this.autores = autores
-      console.log(autores)
     })
   }
 

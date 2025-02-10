@@ -14,6 +14,7 @@ import { AutorUpdateComponent } from './components/template/principal/autor/auto
 import { AssuntoPrincipalUpdateComponent } from './components/template/principal/assunto-principal/assunto-principal-update/assunto-principal-update.component';
 import { LivroDeleteComponent } from './components/template/principal/livro/livro-delete/livro-delete.component';
 import { LivroCreateComponent } from './components/template/principal/livro/livro-create/livro-create.component';
+import { LivroUpdateComponent } from './components/template/principal/livro/livro-update/livro-update.component';
 
 const routes: Routes = [
   { path: '', component: EntradaComponent },
@@ -45,6 +46,10 @@ const routes: Routes = [
   {
     path: "autores/create",
     component: AutorCreateComponent
+  },
+  {
+    path: "livros/update/:id",
+    component: LivroUpdateComponent
   },
   {
     path: "livros/delete/:id",

@@ -1,21 +1,20 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router, ActivatedRoute } from '@angular/router';
-import { LivroService } from '../livro.service';
-import { Livro } from '../livro.model';
+import { forkJoin } from 'rxjs';
+import { Assunto } from '../../assunto-principal/assunto.model';
+import { AssuntoService } from '../../assunto-principal/assunto.service';
 import { Autor } from '../../autor/autor.model';
 import { AutorService } from '../../autor/autor.service';
-import { FormsModule } from '@angular/forms';
-import { AssuntoService } from '../../assunto-principal/assunto.service';
-import { Assunto } from '../../assunto-principal/assunto.model';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { forkJoin } from 'rxjs';
+import { Livro } from '../livro.model';
+import { LivroService } from '../livro.service';
 
 @Component({
-  selector: 'app-livro-create',
-  templateUrl: './livro-create.component.html',
-  styleUrls: ['./livro-create.component.css']
+  selector: 'app-livro-update',
+  templateUrl: './livro-update.component.html',
+  styleUrls: ['./livro-update.component.css']
 })
-export class LivroCreateComponent {
+export class LivroUpdateComponent {
 
   livro: Livro = {
     titulo: '',
@@ -26,6 +25,7 @@ export class LivroCreateComponent {
     autores: [],
     assuntos: [],
   }
+  id: number
 
   autores: Autor[]
   assuntos: Assunto[]
@@ -66,10 +66,35 @@ export class LivroCreateComponent {
       const [autores, assuntos] = value;
       this.autores = autores;
       this.assuntos = assuntos;
-      if (this.autores.length == 0 || this.assuntos.length == 0) {
-        this.router.navigateByUrl("/principal");
-        this.showMessage("Para incluir um livro, é necessário que um autor e um assunto já estejam cadastrados", true);
-      }
+
+      const id = +this.route.snapshot.paramMap.get('id')!
+      this.id = id
+      this.livroService.readById(id).subscribe((livro: Livro) => {
+        this.livro = livro
+
+        if (this.livro.preco !== undefined) {
+          this.livro.preco = this.formatarValorReal(this.livro.preco)
+        }
+
+        for (const autor of this.livro.autores) {
+          const checkboxId = `checkBoxAutor${autor.codAu}`;
+          const checkboxElement = document.getElementById(checkboxId) as HTMLInputElement;
+          if (checkboxElement) {
+            console.log(checkboxElement)
+            checkboxElement.checked = true;
+          }
+          this.associarAutor(autor.codAu)
+        }
+
+        for (const assunto of this.livro.assuntos) {
+          const checkboxId = `checkBoxAssunto${(assunto as any)['codas']}`;
+          const checkboxElement = document.getElementById(checkboxId) as HTMLInputElement;
+          if (checkboxElement) {
+            checkboxElement.checked = true;
+          }
+          this.associarAssunto((assunto as any)['codas'])
+        }
+      })
     });
   }
 
@@ -116,7 +141,12 @@ export class LivroCreateComponent {
     event.target.value = valorFormatado;
   }
 
-  confirmarInclusao() {
+  formatarValorReal(valor: string): string {
+    this.valorPreco = parseFloat(valor).toFixed(2).replace('.', ',');
+    return this.valorPreco
+  }
+
+  confirmarAlteracao() {
     if (this.verificarCamposPreenchidos()) {
       this.inputLivro.assuntos = this.assuntosSelecionados
       this.inputLivro.autores = this.autoresSelecionados
@@ -127,11 +157,12 @@ export class LivroCreateComponent {
       this.inputLivro.editora = this.livro.editora
       this.inputLivro.preco = this.valorEmReaisParaNumerico(this.valorPreco ?? '');
       this.inputLivro.titulo = this.livro.titulo
+      this.inputLivro.codl = this.livro.codl
 
       const livroApi = this.mapLivroParaApi(this.inputLivro);
 
-      this.livroService.create(livroApi).subscribe(() => {
-        this.autorService.showMessage('Livro criado com sucesso!')
+      this.livroService.update(livroApi).subscribe(() => {
+        this.autorService.showMessage('Livro alterado com sucesso!')
         this.router.navigate(['/livros'])
       })
 
@@ -142,6 +173,7 @@ export class LivroCreateComponent {
 
   mapLivroParaApi(livro: Livro): any {
     return {
+      codl: livro.codl,
       titulo: livro.titulo,
       editora: livro.editora,
       edicao: livro.edicao,

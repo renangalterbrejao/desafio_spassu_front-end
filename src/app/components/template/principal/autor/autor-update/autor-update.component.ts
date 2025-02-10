@@ -11,7 +11,10 @@ import { AutorService } from '../autor.service';
 })
 export class AutorUpdateComponent {
 
-  autor: Autor
+  autor: Autor = {
+    nome: '',
+  }
+
   id: number
 
   constructor(
